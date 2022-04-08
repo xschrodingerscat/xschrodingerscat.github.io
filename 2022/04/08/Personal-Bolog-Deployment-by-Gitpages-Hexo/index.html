@@ -13,7 +13,7 @@
 
 
 
-<title>Mathematical Logic | OuyangShuima</title>
+<title>Personal Bolog Deployment by Gitpages &amp; Hexo | OuyangShuima</title>
 
 
 
@@ -229,7 +229,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Mathematical Logic</h1>
+            <h1 class="post-title">Personal Bolog Deployment by Gitpages &amp; Hexo</h1>
             
                 <div class="post-meta">
                     
@@ -238,14 +238,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">April 8, 2022&nbsp;&nbsp;15:12:26</a>
+                        Date: <a href="#">April 8, 2022&nbsp;&nbsp;19:48:41</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Mathematical-Analysis/">Mathematical Analysis</a>
+                                <a href="/categories/Blog-Platform/">Blog Platform</a>
                             
                         </span>
                     
@@ -254,7 +254,40 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Mathematical-Log"><a href="#Mathematical-Log" class="headerlink" title="Mathematical Log"></a>Mathematical Log</h1><h2 id="1-Sum"><a href="#1-Sum" class="headerlink" title="1 Sum"></a>1 Sum</h2><p>$$<br>\frac{d}{dx}e^{ax}&#x3D;ae^{ax}\quad \sum_{i&#x3D;1}^{n}{(X_i - \overline{X})^2}<br>$$</p>
+            <h1 id="Personal-Bolog-Deployment-by-Gitpages-amp-Hexo"><a href="#Personal-Bolog-Deployment-by-Gitpages-amp-Hexo" class="headerlink" title="Personal Bolog Deployment by Gitpages &amp; Hexo"></a>Personal Bolog Deployment by Gitpages &amp; Hexo</h1><blockquote>
+<p> On maxox platform</p>
+</blockquote>
+<h2 id="1-Register-github-account"><a href="#1-Register-github-account" class="headerlink" title="1 Register github account"></a>1 Register <a href="github.com">github</a> account</h2><h2 id="2-Install-nodejs-git-and-hexo"><a href="#2-Install-nodejs-git-and-hexo" class="headerlink" title="2 Install nodejs, git and hexo"></a>2 Install nodejs, git and <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a></h2><p><strong>node-v16.14.2.pkg</strong> : <a target="_blank" rel="noopener" href="https://nodejs.org/en/">nodejs pkg</a></p>
+<p><strong>Hexo</strong>: <code>npm install hexo-cli -g</code></p>
+<p><strong>Git</strong>: <code>brew install git</code></p>
+<h2 id="3-Init-hexo-and-preview-home-page"><a href="#3-Init-hexo-and-preview-home-page" class="headerlink" title="3 Init hexo and preview home page"></a>3 Init hexo and preview home page</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p><strong>Home page address</strong>: <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<h2 id="4-Configuration"><a href="#4-Configuration" class="headerlink" title="4 Configuration"></a>4 Configuration</h2><p>Crate a repository having naming type <a href="xschrodingerscat.github.io">xschrodingerscat.github.io</a></p>
+<p>Config <strong>_config.yml</strong> in your blog directory and append the following codes:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/xschrodingerscat/xschrodingerscat.github.io</span><br><span class="line">  branch: master</span><br><span class="line">  token: **************************************</span><br></pre></td></tr></table></figure>
+
+<p><strong>Token</strong> : Github User -&gt; Settings -&gt; Developer Settings -&gt; Personal access tokens -&gt; Create new token (Allow all options)</p>
+<p>Install <strong>git tool for hexo</strong>: <code>npm install hexo-deployer-git --save</code></p>
+<p>Generate static pages and deploy blog to remote github repository. <code>hexo generate &amp;&amp; hexo deploy</code></p>
+<p><strong>Upload</strong> : Github User -&gt; Settings -&gt; SSH GPG keys -&gt; New SSH key -&gt; <strong>Past the key just generated</strong></p>
+<p><strong>Github Pages</strong> : <username>.github.io -&gt; Settings -&gt; Pages -&gt; <strong>Select the branch and folder (default docs) and Save</strong> </p>
+<h2 id="5-Deployment"><a href="#5-Deployment" class="headerlink" title="5 Deployment"></a>5 Deployment</h2><p> Deploy blog to github rebository : <code>hexo g -d</code> or <code>hexo generate &amp;&amp; hexo deploy</code></p>
+<p> Pernal website address: <a href="https://xschrodingerscat.github.io/">https://xschrodingerscat.github.io</a></p>
+<h2 id="6-Theme-Configuration"><a href="#6-Theme-Configuration" class="headerlink" title="6 Theme Configuration"></a>6 Theme Configuration</h2><p> Select the appropriate theme form <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo theme</a> (<a target="_blank" rel="noopener" href="https://github.com/Siricee/hexo-theme-Chic">Chic</a>)</p>
+<p> Clone: <code>git clone https://github.com/Lemonreds/hexo-theme-Chic.git themes/Chic</code></p>
+<p> Less: <code>npm install hexo-renderer-less --save</code></p>
+<p> Feed: <code>npm install hexo-generator-feed --save</code></p>
+<p> Json-content: <code>npm install hexo-generator-json-content --save</code></p>
+<p> Tag : <code>hexo new page tag</code></p>
+<p> Modify <code>_config.yml</code><br> Modify <code>themes/Chic/_config.yml</code></p>
+<p> More details, please refer to <a target="_blank" rel="noopener" href="https://github.com/Siricee/hexo-theme-Chic">Chic</a></p>
+<h2 id="Appendix-Useful-manual"><a href="#Appendix-Useful-manual" class="headerlink" title="Appendix : Useful manual"></a>Appendix : Useful manual</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo docs</a></p>
+<h2 id="Hexo-Clean"><a href="#Hexo-Clean" class="headerlink" title="Hexo Clean"></a>Hexo Clean</h2><p><code>hexo clean</code></p>
+<h2 id="Generate-ssh-key-for-github-and-upload-for-deploying-failure"><a href="#Generate-ssh-key-for-github-and-upload-for-deploying-failure" class="headerlink" title="Generate ssh-key for github and upload for deploying failure"></a>Generate ssh-key for github and upload for deploying failure</h2><p><strong>Generate</strong>: <code>ssh-keygen -t rsa</code> (For example: all iterm to be entered are default)<br>Tow files will be generated in the ~&#x2F;.ssh&#x2F; directory</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id_rsa      id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p><strong>Copy</strong> : &#96;pbcopy &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub</p>
 
         </div>
 
@@ -283,7 +316,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/math/"># math</a>
+                        <a href="/tags/blog/"># blog</a>
                     
                         
                 </span>
@@ -296,10 +329,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/04/08/Personal-Bolog-Deployment-by-Gitpages-Hexo/">Personal Bolog Deployment by Gitpages & Hexo</a>
             
-            
-            <a class="next" rel="next" href="/2022/04/08/2022-04-08-hello-world/">Hello World</a>
+            <a class="next" rel="next" href="/2022/04/08/Mathmatical-Logic/">Mathematical Logic</a>
             
         </section>
 
