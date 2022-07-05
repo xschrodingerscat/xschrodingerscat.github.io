@@ -13,7 +13,7 @@
 
 
 
-<title>Real Number Theory | OuyangShuima</title>
+<title>Compile and Install Dealii on MacOSX | OuyangShuima</title>
 
 
 
@@ -233,7 +233,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Real Number Theory</h1>
+            <h1 class="post-title">Compile and Install Dealii on MacOSX</h1>
             
                 <div class="post-meta">
                     
@@ -242,14 +242,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">April 9, 2022&nbsp;&nbsp;8:32:09</a>
+                        Date: <a href="#">May 16, 2022&nbsp;&nbsp;14:57:09</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Mathematical-Analysis/">Mathematical Analysis</a>
+                                <a href="/categories/%E2%80%9CDealii%E2%80%9D/">“Dealii”</a>
                             
                         </span>
                     
@@ -258,16 +258,18 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Real-Number-Theory"><a href="#Real-Number-Theory" class="headerlink" title="Real Number Theory"></a>Real Number Theory</h1><blockquote>
-<p><strong>Pay particular attention to the property of completeness and continuity, which contains the germ of passage to the limit.</strong></p>
-</blockquote>
-<h2 id="1-Definition-of-the-Set-of-Real-Number"><a href="#1-Definition-of-the-Set-of-Real-Number" class="headerlink" title="1 Definition of the Set of Real Number"></a>1 Definition of the Set of Real Number</h2><p><strong>I (Axioms of Addition)</strong> Binary <strong>operation</strong> $ + : \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R} $ satisfies the following axioms.</p>
-<p><strong>A1</strong>. <strong>Neutral or identity</strong><br>$$<br>\exists 0 \in \mathbb{R} \ \forall x \in \mathbb{R} (x + 0 &#x3D; 0 + x &#x3D; x)<br>$$</p>
-<p><strong>A2</strong>. <strong>Negative element</strong><br>$$<br>\forall x \in \mathbb{R} \ \exists -x \in \mathbb{R} (x + (-x) &#x3D; (-x) + x &#x3D; 0)<br>$$</p>
-<p><strong>A3</strong>. <strong>Associative</strong><br>$$<br>\forall x, y and z\in \mathbb{R} ((x+y) + x &#x3D; x + (y + z) &#x3D; x + y + z)<br>$$</p>
-<p><strong>A4</strong>. <strong>Commutative</strong><br>$$<br>\forall x, y \in \mathbb{R} (x + y &#x3D; y + x)<br>$$</p>
-<p>The set G satisfying A1, A2 and A3 is called a <strong>group</strong>. If the operation is addition, then the group is called an <strong>additive group</strong>. If the set satisfies all previous four axioms, the set is called <strong>Abelian group</strong>.<br>The number larger than zero are called <strong>positive</strong> and those less than zero <strong>negative</strong>.</p>
-<h2 id="3-The-Completeness-Axiom-and-the-Existence-of-a-Least-Upper-or-Great-Lower-Bound-of-a-Set-of-Numbers"><a href="#3-The-Completeness-Axiom-and-the-Existence-of-a-Least-Upper-or-Great-Lower-Bound-of-a-Set-of-Numbers" class="headerlink" title="3 The Completeness Axiom and the Existence of a Least Upper (or Great Lower) Bound of a Set of Numbers"></a>3 The Completeness Axiom and the Existence of a Least Upper (or Great Lower) Bound of a Set of Numbers</h2><p><strong>Bounded Above</strong>: A set $ X \subset \mathbb{R} $ is said to be bounded above if there exists a number $c \in mathbb{R} $ such that $x \ge c$ for all $x \in X$.</p>
+            <h1 id="Compile-and-Install-Dealii-on-MacOSX"><a href="#Compile-and-Install-Dealii-on-MacOSX" class="headerlink" title="Compile and Install Dealii on MacOSX"></a>Compile and Install Dealii on MacOSX</h1><p><strong>What is the dealii?</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.dealii.org/">Deal.II</a> is a C++ program library targeted at the computational solution of partial differential equations using adaptive finite elements. It uses state-of-the-art programming techniques to offer you a modern interface to the complex data structures and algorithms required.</p>
+<h2 id="1-Acquire-the-dealii-source-code"><a href="#1-Acquire-the-dealii-source-code" class="headerlink" title="1 Acquire the dealii source code"></a>1 Acquire the dealii source code</h2><p>Download the source code <em><strong>dealii-9.3.zip</strong></em> from <a target="_blank" rel="noopener" href="https://github.com/dealii/dealii/tree/dealii-9.3">here</a>. </p>
+<h2 id="2-Prepare-Compile-and-Install"><a href="#2-Prepare-Compile-and-Install" class="headerlink" title="2 Prepare,  Compile and Install"></a>2 Prepare,  Compile and Install</h2><p>Run the following commands on <strong>Iterm2</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="built_in">mkdir</span> ulib</span><br><span class="line"></span><br><span class="line"><span class="built_in">mv</span> ~/download/dealii-9.3.zip ~/ulib</span><br><span class="line">unzip dealii-9.3.zip</span><br><span class="line"></span><br><span class="line"><span class="built_in">mv</span> dealii-9.3 dealii-9.3-src</span><br><span class="line"><span class="built_in">mkdir</span> dealii-9.3</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> dealii-9.3-src</span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake -D CMAKE_INSTALL_PREFIX=~/ulib/dealii-9.3 ..</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="3-Make-and-Run-examples"><a href="#3-Make-and-Run-examples" class="headerlink" title="3 Make and Run examples"></a>3 Make and Run examples</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ulib/dealii-9.3-src</span><br><span class="line">make <span class="built_in">help</span></span><br><span class="line">make step-1.release</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~/ulib/dealii-9.3</span><br><span class="line"><span class="built_in">cd</span> examples/step1</span><br><span class="line">./step-1.release</span><br></pre></td></tr></table></figure>
+
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><ul>
+<li>Download <strong><em>ParaView</em></strong> from <a target="_blank" rel="noopener" href="https://www.paraview.org/download/">here</a>.</li>
+<li><a target="_blank" rel="noopener" href="https://www.dealii.org/current/index.html">Dealii Documentation</a></li>
+<li>The examples : <strong><em>step-1, step-2, step-3, step-4 and step-23</em></strong> are needed by us.</li>
+</ul>
 
         </div>
 
@@ -296,7 +298,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/math/"># math</a>
+                        <a href="/tags/dealii/"># dealii</a>
                     
                         
                 </span>
@@ -309,10 +311,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/05/06/Linear-Algebra-Preface-Gilbert/">Linear Algebra Preface Gilbert</a>
+                <a class="prev" rel="prev" href="/2022/05/30/Solution-of-Wave-Equation-with-PML-using-FEM/">Solution of Wave Equation with PML using FEM</a>
             
             
-            <a class="next" rel="next" href="/2022/04/08/Github-Pages-and-Hexo-for-Personal-Bolog-Deployment/">Github Pages and Hexo for Personal Bolog Deployment</a>
+            <a class="next" rel="next" href="/2022/05/06/Linear-Algebra-Preface-Gilbert/">Linear Algebra Preface Gilbert</a>
             
         </section>
 

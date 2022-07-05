@@ -13,7 +13,7 @@
 
 
 
-<title>Real Number Theory | OuyangShuima</title>
+<title>Solution of Wave Equation with PML using FEM | OuyangShuima</title>
 
 
 
@@ -233,7 +233,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Real Number Theory</h1>
+            <h1 class="post-title">Solution of Wave Equation with PML using FEM</h1>
             
                 <div class="post-meta">
                     
@@ -242,14 +242,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">April 9, 2022&nbsp;&nbsp;8:32:09</a>
+                        Date: <a href="#">May 30, 2022&nbsp;&nbsp;12:52:24</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Mathematical-Analysis/">Mathematical Analysis</a>
+                                <a href="/categories/%E2%80%9CDealii%E2%80%9D/">“Dealii”</a>
                             
                         </span>
                     
@@ -258,16 +258,13 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Real-Number-Theory"><a href="#Real-Number-Theory" class="headerlink" title="Real Number Theory"></a>Real Number Theory</h1><blockquote>
-<p><strong>Pay particular attention to the property of completeness and continuity, which contains the germ of passage to the limit.</strong></p>
-</blockquote>
-<h2 id="1-Definition-of-the-Set-of-Real-Number"><a href="#1-Definition-of-the-Set-of-Real-Number" class="headerlink" title="1 Definition of the Set of Real Number"></a>1 Definition of the Set of Real Number</h2><p><strong>I (Axioms of Addition)</strong> Binary <strong>operation</strong> $ + : \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R} $ satisfies the following axioms.</p>
-<p><strong>A1</strong>. <strong>Neutral or identity</strong><br>$$<br>\exists 0 \in \mathbb{R} \ \forall x \in \mathbb{R} (x + 0 &#x3D; 0 + x &#x3D; x)<br>$$</p>
-<p><strong>A2</strong>. <strong>Negative element</strong><br>$$<br>\forall x \in \mathbb{R} \ \exists -x \in \mathbb{R} (x + (-x) &#x3D; (-x) + x &#x3D; 0)<br>$$</p>
-<p><strong>A3</strong>. <strong>Associative</strong><br>$$<br>\forall x, y and z\in \mathbb{R} ((x+y) + x &#x3D; x + (y + z) &#x3D; x + y + z)<br>$$</p>
-<p><strong>A4</strong>. <strong>Commutative</strong><br>$$<br>\forall x, y \in \mathbb{R} (x + y &#x3D; y + x)<br>$$</p>
-<p>The set G satisfying A1, A2 and A3 is called a <strong>group</strong>. If the operation is addition, then the group is called an <strong>additive group</strong>. If the set satisfies all previous four axioms, the set is called <strong>Abelian group</strong>.<br>The number larger than zero are called <strong>positive</strong> and those less than zero <strong>negative</strong>.</p>
-<h2 id="3-The-Completeness-Axiom-and-the-Existence-of-a-Least-Upper-or-Great-Lower-Bound-of-a-Set-of-Numbers"><a href="#3-The-Completeness-Axiom-and-the-Existence-of-a-Least-Upper-or-Great-Lower-Bound-of-a-Set-of-Numbers" class="headerlink" title="3 The Completeness Axiom and the Existence of a Least Upper (or Great Lower) Bound of a Set of Numbers"></a>3 The Completeness Axiom and the Existence of a Least Upper (or Great Lower) Bound of a Set of Numbers</h2><p><strong>Bounded Above</strong>: A set $ X \subset \mathbb{R} $ is said to be bounded above if there exists a number $c \in mathbb{R} $ such that $x \ge c$ for all $x \in X$.</p>
+            <h1 id="Solution-of-Wave-Equation-with-PML-using-FEM"><a href="#Solution-of-Wave-Equation-with-PML-using-FEM" class="headerlink" title="Solution of Wave Equation with PML using FEM"></a>Solution of Wave Equation with PML using FEM</h1><h2 id="1-Wave-Equation"><a href="#1-Wave-Equation" class="headerlink" title="1 Wave Equation"></a>1 Wave Equation</h2><p>$$<br>\begin {equation}<br>\label{eq1}<br>\Large<br>\frac{\partial ^2{u} }{\partial{t^2}} - c^2 \nabla ^2 u &#x3D; 0<br>\end {equation}<br>$$</p>
+<h2 id="2-PML-Tranformation"><a href="#2-PML-Tranformation" class="headerlink" title="2 PML Tranformation"></a>2 PML Tranformation</h2><h3 id="2-1-The-operator-of-PML-Transformation"><a href="#2-1-The-operator-of-PML-Transformation" class="headerlink" title="2.1 The operator of PML Transformation:"></a>2.1 The operator of <strong>PML Transformation</strong>:</h3><p>$$<br>\begin {equation}<br>\label{eq2}<br>\Large<br>\frac {\partial} {\partial x} \longrightarrow \frac{1} {1 + i \omega &#x2F; \sigma_x} \frac {\partial} {\partial x}<br>\end {equation}<br>$$</p>
+<h3 id="2-2-Fourier-Transformation-for-Wave-Equation"><a href="#2-2-Fourier-Transformation-for-Wave-Equation" class="headerlink" title="2.2 Fourier Transformation for Wave Equation"></a>2.2 Fourier Transformation for Wave Equation</h3><p>$$<br>\begin {equation}<br>\begin {aligned}<br>\label{eq3}<br>\Large<br>\frac{\partial u} {\partial t} &#x3D;  b \nabla \cdot v &#x3D; b \frac{\partial v_x} {\partial x} + b \frac{\partial v_y} {\partial_y} &#x3D; -i \omega u  \\<br>\Large<br>\frac {\partial v_x} {\partial t} &#x3D; a \frac{\partial u}{\partial x} &#x3D; - i \omega v_x \\<br>\Large<br>\frac {\partial v_y} {\partial t} &#x3D; a \frac{\partial u}{\partial y} &#x3D; -i \omega v_y \\<br>\end {aligned}<br>\end {equation}<br>$$</p>
+<h3 id="2-3-PML-Transformation-in-Frequency-Domain"><a href="#2-3-PML-Transformation-in-Frequency-Domain" class="headerlink" title="2.3 PML Transformation in Frequency Domain"></a>2.3 PML Transformation in Frequency Domain</h3><p>Introduce a new auxiliary field variable $\psi$.<br>$$<br>\begin {equation}<br>\begin {aligned}<br>\label{eq4}<br>\Large<br>-iw\psi &#x3D; b \sigma_x \frac{\partial v_y} {\partial y} \\<br>\Large<br>b \frac{\partial v_x} {\partial x} + \psi&#x3D; - i\omega u + \sigma_x u<br>\end {aligned}<br>\end {equation}<br>$$</p>
+<h3 id="2-4-PML-Transformation-in-Time-Domain"><a href="#2-4-PML-Transformation-in-Time-Domain" class="headerlink" title="2.4 PML Transformation in Time Domain"></a>2.4 PML Transformation in Time Domain</h3><p>$$<br>\begin {equation}<br>\begin {aligned}<br>\label{eq5}<br>\Large<br>\frac {\partial u} {\partial t} &#x3D; b \nabla \cdot v - \sigma_x u + \psi \\<br>\Large<br>\frac {\partial v_x} {\partial t} &#x3D; a \frac {\partial u}{\partial x} - \sigma_x v_x \\<br>\Large<br>\frac {\partial v_y} {\partial t} &#x3D; a \frac{\partial u}{\partial y} \\<br>\Large<br>\frac {\partial \psi} {\partial t} &#x3D; b \sigma_x \frac{\partial v_y}{\partial y}<br>\end {aligned}<br>\end {equation}<br>$$</p>
+<h2 id="3-Time-discretization"><a href="#3-Time-discretization" class="headerlink" title="3 Time discretization"></a>3 Time discretization</h2><p>Rothe’s method</p>
+<p>$$<br>\begin {equation}<br>\begin {aligned}<br>\label{eq6}<br>\Large<br>\frac {u^n - u^{n-1}} {k} &#x3D; b \nabla \cdot (\theta v^n + (1 - \theta) v^{n-1}) - \sigma_x (\theta u^n + (1-\theta) u^{n-1}) + (\theta \psi^n + (1-\theta) \psi^{n-1})  &amp;&amp; \\<br>\Large<br>\frac {v_x^n - v_x^{n-1}} {k} &#x3D; a \frac {\partial}{\partial x} (\theta u^n + (1-\theta) u^{n-1}) - \sigma_x (\theta v_x^n + (1 - \theta) v_x^{n-1})  &amp;&amp; \\<br>\Large<br>\frac {v_y^n - v_y^{n-1}} {k} &#x3D; a \frac{\partial}{\partial y} (\theta u^n +(1-\theta) u^{n-1}) \\<br>\Large<br>\frac {\psi^n - \psi^{n-1}} {k} &#x3D; b \sigma_x \frac {\partial} {\partial y} (\theta v_y^n + (1 - \theta) v_y^{n-1})<br>\end {aligned}<br>\end {equation}<br>$$</p>
 
         </div>
 
@@ -296,7 +293,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/math/"># math</a>
+                        <a href="/tags/dealii/"># dealii</a>
                     
                         
                 </span>
@@ -309,10 +306,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/05/06/Linear-Algebra-Preface-Gilbert/">Linear Algebra Preface Gilbert</a>
             
-            
-            <a class="next" rel="next" href="/2022/04/08/Github-Pages-and-Hexo-for-Personal-Bolog-Deployment/">Github Pages and Hexo for Personal Bolog Deployment</a>
+            <a class="next" rel="next" href="/2022/05/16/Compile-and-Install-Dealii-on-MacOSX/">Compile and Install Dealii on MacOSX</a>
             
         </section>
 
